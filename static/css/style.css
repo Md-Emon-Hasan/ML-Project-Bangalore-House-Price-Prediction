@@ -1,0 +1,214 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('https://www.primeinvest.es//engine/files/blog/imagenes/Corallisa%20-%20LR%20-001.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    min-height: 100vh;
+    /* overflow-x: hidden; */
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+    animation: overlayFadeIn 2s ease-in-out;
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(5px);
+    animation: fadeIn 3s ease-in-out, float 3s ease-in-out infinite;
+    max-width: 800px;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+h1, h2 {
+    text-align: center;
+    text-shadow: 3px 3px 9px rgba(0, 0, 0, 0.9);
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 25px;
+    animation: slideInDown 1s ease-in-out;
+}
+
+h2 {
+    font-size: 1.7rem;
+    margin-bottom: 35px;
+    color: #fdbb2d;
+    animation: slideInUp 1s ease-in-out;
+}
+
+.form-group label {
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.form-control{
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-radius: 1rem;
+}
+
+input, select, button {
+    border-radius: 8px;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    color: #000000;
+    font-size: 1.1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+input:focus, select:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+button {
+    background: linear-gradient(to right, #ffffff, #000000);
+    color: #fff;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 0.9s ease, transform 0.9s ease;
+    /* border-color: transparent; */
+}
+
+.btn-primary{
+    border-radius: 20px;
+    padding: 8px;
+    border-color: none;
+}
+
+button:hover {
+    transition: background 0.9s ease, transform 0.9s ease;
+    transform: translateY(-3px) scale(1);
+}
+
+button:active {
+    transform: translateY(0) scale(1);
+}
+
+.footer {
+    border-top: 1px solid #ffffff;
+    padding-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.footer a {
+    color: #fdbb2d;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer a:hover {
+    color: #b21f1f;
+    text-decoration: underline;
+}
+
+.last {
+    text-align: center;
+    color: #fdbb2d;
+    font-size: 2rem;
+    margin-top: 25px;
+    animation: fadeIn 3s ease-in-out, pulse 3s infinite;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideInDown {
+    0% { transform: translateY(-100px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInUp {
+    0% { transform: translateY(100px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes overlayFadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Background Slide Animation */
+body {
+    background-size: cover;
+    animation: backgroundSlide 15s ease infinite;
+}
+
+@keyframes backgroundSlide {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Form Hover Effects */
+.form-group input:hover, .form-group select:hover {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Floating Labels */
+.form-group label {
+    position: relative;
+    top: -5px;
+    transition: all 0.3s ease;
+}
+
+input:focus ~ label, select:focus ~ label {
+    top: -30px;
+    font-size: 0.8rem;
+    color: #fdbb2d;
+}
+/* Hide spin buttons in Chrome, Safari, Edge */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Hide spin buttons in Firefox */
+input[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
+}
+
+/* Hide spin buttons in Internet Explorer 10+ */
+input[type="number"]::-ms-clear {
+    display: none;
+}

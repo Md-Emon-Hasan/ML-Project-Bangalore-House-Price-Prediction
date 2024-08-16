@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangalore House Price Prediction</title>
+    <link rel="icon" type="image/x-icon" href="https://designimages.appypie.com/allimages/realestatefavicon6.jpg">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Externel CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <h1>Bangalore House Price Prediction</h1>
+        <h2>Made by Emon Hasan</h2>
+        <form action="/predict" method="post">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="area_type">Area Type:</label>
+                    <select name="area_type" id="area_type" class="form-control">
+                        {% for area_type in area_types %}
+                            <option value="{{ area_type }}">{{ area_type }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="type">Location:</label>
+                    <select name="location" id="location" class="form-control">
+                        {% for location in locations %}
+                            <option value="{{ location }}">{{ location }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="bhk">BHK:</label>
+                    <input type="number" step="1" name="bhk" id="bhk" class="form-control" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="bath">Bath:</label>
+                    <input type="number" step="1" name="bath" id="bath" class="form-control" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="balcony">Balcony:</label>
+                    <input type="number" step="1" name="balcony" id="balcony" class="form-control" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="total_sqft">Total sqft:</label>
+                    <input type="number" step="1" name="total_sqft" id="total_sqft" class="form-control" required>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Predict Price</button>
+        </form>
+
+        {% if price %}
+        <h2 class="last">House Price Prediction &#8377; {{ price }} INR</h2>
+        {% endif %}
+
+        {% if prediction is not none %}
+            <div class="mt-4">
+                <p><strong>Area Type:</strong> {{ area_type }}</p>
+                <p><strong>Location:</strong> {{ location }}</p>
+                <p><strong>Total sqft:</strong> {{ total_sqft }}</p>
+                <p><strong>Bath:</strong> {{ bath }}</p>
+                <p><strong>Balcony:</strong> {{ balcony }}</p>
+                <p><strong>BHK:</strong> {{ bhk }}</p>
+            </div>
+        {% endif %}
+
+    </div>
+    <div class="footer">
+        <p>&copy; 2024<a href="https://github.com/Md-Emon-Hasan"> Emon Hasan</a> | All rights reserved.</p>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
