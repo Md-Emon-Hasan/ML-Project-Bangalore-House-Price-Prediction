@@ -2,7 +2,7 @@
 
 Welcome to the **Bangalore House Price Prediction** repository! This project leverages machine learning techniques to predict house prices in Bangalore based on various features such as location, size, and other attributes.
 
-![Bangalore House Price Prediction](![Capture](https://github.com/user-attachments/assets/a97552ea-db70-4069-8417-0db2d7e183cb))
+![Capture](https://github.com/user-attachments/assets/a97552ea-db70-4069-8417-0db2d7e183cb)
 
 ## 📋 Contents
 
